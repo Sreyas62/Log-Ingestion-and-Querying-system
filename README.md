@@ -12,8 +12,8 @@ A lightweight log management system that provides a simple yet powerful way to c
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/log-ingestion-system.git
-   cd log-ingestion-system
+   git clone https://github.com/Sreyas62/Log-Ingestion-and-Querying-system
+   cd Log-Ingestion-and-Querying-system
    ```
 
 2. **Set up the backend**
@@ -57,7 +57,7 @@ npm install
 npm run dev
 ```
 
-The backend will start on `http://localhost:5001`
+The backend will start on `http://localhost:5000`
 
 #### Start the Frontend Development Server
 ```bash
@@ -106,7 +106,7 @@ npm test
 
 ## 📚 API Documentation
 
-Detailed API documentation is available at `http://localhost:5001/api-docs` when the backend server is running.
+Detailed API documentation is available at `API_DOCUMENTATION`.
 
 ## 🔍 Features
 
@@ -166,60 +166,32 @@ Detailed API documentation is available at `http://localhost:5001/api-docs` when
 - For production use, consider adding authentication and monitoring
 - Logs are stored in `backend/data/logs.json` by default
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or later)
-- npm (v9 or later) or yarn
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   # Install backend dependencies
-   cd backend
-   npm install
-
-   # Install frontend dependencies
-   cd ../frontend
-   npm install
-   ```
-
-3. Set up environment variables (see `.env.example`)
-
-4. Start the development servers:
-   ```bash
-   # In one terminal (backend)
-   cd backend
-   npm run dev
-
-   # In another terminal (frontend)
-   cd frontend
-   npm run dev
-   ```
-
 ## Project Structure
 
 ```
 .
-├── backend/           # Backend server code
-│   ├── config/       # Configuration files
-│   ├── controllers/  # Route controllers
-│   ├── models/       # Database models
-│   ├── routes/       # API routes
-│   ├── services/     # Business logic
-│   └── utils/        # Utility functions
-├── frontend/         # Frontend React application
-│   ├── public/       # Static files
-│   └── src/          # Source files
-│       ├── components/  # Reusable UI components
-│       ├── pages/       # Page components
-│       ├── services/    # API services
-│       ├── hooks/       # Custom React hooks
-│       └── utils/       # Utility functions
-└── .github/          # GitHub configurations
+├── backend/               # Backend server code
+│   ├── config/           # Configuration files
+│   ├── controllers/      # Route controllers
+│   ├── data/             # Log data storage (JSON files)
+│   ├── middleware/       # Express middleware
+│   ├── routes/           # API route definitions
+│   ├── __tests__/        # Test files
+│   └── utils/            # Utility functions and file storage logic
+├── frontend/             # Frontend React application
+│   ├── public/           # Static files
+│   └── src/              # Source files
+│       ├── components/   # Reusable UI components
+│       ├── hooks/        # Custom React hooks
+│       ├── lib/          # Library code and utilities
+│       ├── pages/        # Page components
+│       ├── routes/       # Application routes
+│       ├── services/     # API service layer
+│       ├── theme/        # Styling and theming
+│       └── types/        # TypeScript type definitions
+├── .github/              # GitHub configurations
+├── docker-compose.yml    # Docker Compose configuration
+└── README.md            # Project documentation
 ```
 
 ## API Documentation
