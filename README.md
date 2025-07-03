@@ -196,7 +196,7 @@ Detailed API documentation is available at `API_DOCUMENTATION`.
 
 ## API Documentation
 
-API documentation will be available at `/api-docs` when the development server is running.
+API documentation will be available at `API_DOCUMENTATION` when the development server is running.
 
 ## License
 
