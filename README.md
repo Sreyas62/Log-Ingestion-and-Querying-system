@@ -121,7 +121,6 @@ Detailed API documentation is available at `http://localhost:5001/api-docs` when
 
 - Node.js (v18 or later)
 - npm (v9 or later) or yarn
-- MongoDB Atlas account or local MongoDB instance
 
 ### Installation
 

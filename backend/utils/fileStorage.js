@@ -114,10 +114,16 @@ const queryLogs = async (filters = {}) => {
   return logs;
 };
 
+// Clear all logs from storage
+const clearLogs = async () => {
+  await writeLogs([]);
+};
+
 module.exports = {
   initDataFile,
   addLog,
   queryLogs,
   readLogs,
-  writeLogs
+  writeLogs,
+  clearLogs
 };
