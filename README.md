@@ -5,8 +5,8 @@ A lightweight log management system that provides a simple yet powerful way to c
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18 or later
-- npm 9 or later
+- Docker and Docker Compose (for containerized deployment)
+- OR Node.js 18+ and npm 9+ (for local development)
 
 ### Installation
 
@@ -32,17 +32,37 @@ A lightweight log management system that provides a simple yet powerful way to c
 
 ## 🖥️ Running the Application
 
-### Start the Backend Server
+### Option 1: Using Docker (Recommended)
+
+1. **Build and start all services**
+   ```bash
+   docker-compose up --build
+   ```
+
+2. **Access the application**
+   - Frontend: http://localhost
+   - Backend API: http://localhost:5001
+
+3. **Stop the application**
+   ```bash
+   docker-compose down
+   ```
+
+### Option 2: Local Development
+
+#### Start the Backend Server
 ```bash
 cd backend
+npm install
 npm run dev
 ```
 
 The backend will start on `http://localhost:5001`
 
-### Start the Frontend Development Server
+#### Start the Frontend Development Server
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
 
@@ -109,6 +129,37 @@ Detailed API documentation is available at `http://localhost:5001/api-docs` when
 - Recharts - Data visualization
 - React Query - Data fetching
 - date-fns - Date formatting
+
+## 🏆 Bonus Challenges Implemented
+
+### 1. Advanced Analytics Dashboard
+- **Implementation**: Added an interactive analytics dashboard using Recharts
+- **Features**:
+  - Visual representation of log distribution by level
+  - Real-time updates based on current filters
+  - Responsive design that works on all screen sizes
+- **Location**: Frontend `/src/components/LogAnalytics.tsx`
+
+### 2. Containerization with Docker
+- **Implementation**: Complete Docker setup for both frontend and backend
+- **Features**:
+  - Multi-stage builds for optimized image sizes
+  - Nginx for serving the frontend in production mode
+  - Volume mapping for persistent log storage
+  - Environment variable configuration
+- **Files**:
+  - `Dockerfile` (frontend and backend)
+  - `docker-compose.yml`
+  - `nginx.conf` for frontend routing
+
+### 3. Comprehensive Unit Testing
+- **Implementation**: Jest test suite for backend filtering logic
+- **Coverage**:
+  - Filtering by all log fields (level, resourceId, traceId, etc.)
+  - Combined filter scenarios
+  - Edge cases (empty results, case sensitivity, date ranges)
+  - 90%+ statement coverage
+- **Location**: `backend/__tests__/fileStorage.test.js`
 
 ## 📝 Notes
 - The system is designed to handle moderate log volumes efficiently
