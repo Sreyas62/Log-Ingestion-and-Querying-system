@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: log-ingestion-backend
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend/data:/app/data
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
+      - PORT=5001
+    restart: unless-stopped
+    networks:
+      - log-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: log-ingestion-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - log-network
+
+networks:
+  log-network:
+    driver: bridge
