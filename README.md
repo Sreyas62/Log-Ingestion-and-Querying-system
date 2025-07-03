@@ -1,6 +1,7 @@
 # Log Ingestion and Querying System
 
-A lightweight log management system that provides a simple yet powerful way to collect, search, and analyze log data. Built with a modern tech stack, this solution offers real-time log processing capabilities without the complexity of traditional log management systems.
+A lightweight log management system that provides a simple yet powerful way to collect, search, and analyze log data. Built with a modern tech stack, this solution offers real-time log processing capabilities without the complexity of traditional log management systems. 
+Built with Vibe Coding approach
 
 ## 🚀 Quick Start
 
