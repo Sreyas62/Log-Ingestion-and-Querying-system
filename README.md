@@ -42,7 +42,7 @@ Built with Vibe Coding approach
 
 2. **Access the application**
    - Frontend: http://localhost
-   - Backend API: http://localhost:5001
+   - Backend API: http://localhost:5000
 
 3. **Stop the application**
    ```bash

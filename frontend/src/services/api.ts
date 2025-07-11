@@ -39,7 +39,7 @@ export interface LogsQueryParams {
   limit?: number;
 }
 
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = 'http://localhost:5000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -48,38 +48,6 @@ const api = axios.create({
   },
 });
 
-// Request interceptor for adding auth token if needed
-api.interceptors.request.use(
-  (config) => {
-    // Add auth token if available
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-// Response interceptor for handling errors
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response) {
-      // Handle HTTP errors
-      console.error('API Error:', error.response.data);
-    } else if (error.request) {
-      // Handle network errors
-      console.error('Network Error:', error.request);
-    } else {
-      // Handle other errors
-      console.error('Error:', error.message);
-    }
-    return Promise.reject(error);
-  }
-);
 
 // Logs API
 export const logsApi = {

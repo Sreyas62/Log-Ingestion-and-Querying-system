@@ -14,7 +14,7 @@ COPY . .
 RUN mkdir -p data
 
 # Expose the port the app runs on
-EXPOSE 5001
+EXPOSE 5000
 
 # Command to run the application
 CMD ["node", "index.js"]

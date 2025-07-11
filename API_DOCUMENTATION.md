@@ -4,10 +4,10 @@ This document outlines the API endpoints for the Log Ingestion and Querying Syst
 
 ## Base URL
 ```
-http://localhost:5001/api
+http://localhost:5000/api
 ```
 
-> **Note:** The default port is 5001, but this can be configured via the `PORT` environment variable.
+> **Note:** The default port is 5000, but this can be configured via the `PORT` environment variable.
 
 ## Authentication
 No authentication is required for development. For production use, consider adding API key authentication.
